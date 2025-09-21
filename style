@@ -1,0 +1,56 @@
+/* Fondo futurista estilo cielo de avión */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a1a3c, #1c4da1, #87ceeb);
+  background-size: 400% 400%;
+  animation: skyShift 20s ease infinite;
+  font-family: Arial, sans-serif;
+}
+
+/* Animación del degradado del cielo */
+@keyframes skyShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estrellas parpadeando futuristas */
+.stars {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+  box-shadow: 
+    100px 50px white, 200px 80px white, 300px 120px white,
+    400px 200px white, 250px 300px white, 150px 400px white,
+    500px 150px white, 600px 250px white, 700px 100px white;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/* Líneas futuristas estilo HUD (pantalla de cabina) */
+.hud-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 255, 255, 0.3);
+  animation: moveHUD 10s linear infinite;
+}
+
+@keyframes moveHUD {
+  from { transform: translateY(0); }
+  to { transform: translateY(100vh); }
+}
